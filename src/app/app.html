@@ -1,0 +1,24 @@
+<ion-menu [content]="content" id="myMenu">
+  <ion-header>
+    <ion-toolbar color="custom">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="light-blue darken-4" style="top:0!important">
+  <h4 class="text-center" style="margin-left: 67px">
+    <ion-icon name="contact" class="large white-text text-center"style="margin-left: 67px"></ion-icon><br><small class="white-text">{{this.emailId}}</small>
+  </h4>
+
+  <hr class="no-margin">
+    <ion-list class="light-blue darken-4 white-text" >
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" class="light-blue darken-4 white-text">       
+          <ion-icon name="{{p.icon}}" item-left></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

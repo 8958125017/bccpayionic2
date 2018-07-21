@@ -1,0 +1,42 @@
+<!--
+  Generated template for the RequestbtcPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-navbar color="custom">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Request BTC</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	 <div class="row center">
+
+      <div class="col center">
+        <img src="http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=bitcoin:{{userBTCAddress}},amount:{{requestAmountBTC}}" alt="QR Code">
+        <div class="">
+          <span>{{userBTCAddress}}
+                        </span>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="row padding">
+      <div  class="input-field col s12">
+                                   
+           <input type="number" [(ngModel)]="requestAmountBTC" (ngModelChange)="myRequestFunc(requestAmountBTC)" placeholder="Amount(BTC)">
+          
+      </div>
+    </div>
+    <div class="center">
+      <a class="btn-floating btn-large waves-effect center waves-light light-blue darken-4 center" (click)="shareBTCRequest('bitcoin:'+userBTCAddress+',amount:'+requestAmountBTC)"><ion-icon name="share"></ion-icon></a>
+    </div>
+
+</ion-content>

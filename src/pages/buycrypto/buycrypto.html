@@ -1,0 +1,52 @@
+<!--
+  Generated template for the BuycryptoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="custom">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Buy BCC</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="relative-position">
+    <div class="light-blue darken-4 white-text padding">
+      <div class="row">
+        <h4 class="col white-text no-margin text-roboto"><span class="crypto-icon crypto-vault-symbol">Ƀc&nbsp;</span>{{BCHbalance}}</h4>
+
+      </div>
+      <div class="row no-margin">
+        <div class="col col-50  white-text">
+          <small style="color: #a9a9a9">Freezed BCC Balance </small><br><span class="">Ƀc&nbsp;</span>{{FreezedBCHbalance}}
+        </div>
+        <span class="pull-right valign-wrapper">1 Ƀc = {{currentUserBalance.ask }} Ƀ</span>
+      </div>
+    </div>
+    <div class="row padding">
+      <form class="col s12 center ">
+
+        <div class="row ">
+          <div class="input-field col s12 ">
+          <input id="number" type="number" placeholder="Amount Of BCC" [(ngModel)]="buyAmountSend.buyAmountBCH" (ngModelChange)="myFunc(buyAmountSend.buyAmountBCH)" name="number" >    
+             
+          </div>
+        </div>
+        <div class="row ">
+          <div class="input-field col s12 ">
+          	<input id="number" type="number" placeholder="Amount Of BTC" [(ngModel)]="buyAmountSend.buyAmountBTC"  name="number" disabled="true">  
+           
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light light-blue darken-4 white-text" type="submit " name="action " (click)="buyAmountAction(buyAmountSend) ">Submit
+        <ion-icon name="send"></ion-icon>
+        </button>
+      </form>
+    </div>
+
+  </ion-content>
+
+

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="custom">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Request BCH</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	 <div class="row center">
+
+      <div class="col center">
+        <img src="http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=bitcoin:{{userBCHAddress}},amount:{{requestAmountBCH}}" alt="QR Code">
+        <div class="">
+          <span>{{userBCHAddress}}
+                        </span>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="row padding">
+      <div  class="input-field col s12">
+                                   
+           <input type="number" [(ngModel)]="requestAmountBCH" (ngModelChange)="myRequestFunc(requestAmountBCH)" placeholder="Amount(BTC)">
+          
+      </div>
+    </div>
+    <div class="center">
+      <a class="btn-floating btn-large waves-effect center waves-light light-blue darken-4 center" (click)="shareBCHRequest('bitcoincash:'+userBCHAddress+',amount:'+requestAmountBCH)"><ion-icon name="share"></ion-icon></a>
+    </div>
+
+</ion-content>
+

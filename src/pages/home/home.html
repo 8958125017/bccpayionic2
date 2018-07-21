@@ -1,0 +1,74 @@
+
+<ion-header>
+  <ion-navbar color="custom">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>DashBoard</ion-title>
+  </ion-navbar>
+</ion-header>
+
+  <ion-content>
+     <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+    <div class="light-blue darken-4 white-text padding-top padding-bottom">
+      <div class="row center no-margin">
+        <h5 class="center col white-text text-roboto">BCC/BTC Market</h5>
+      </div>
+      <div class="center row no-margin trade-div white">
+
+        <div class="col light-blue-text text-darken-4" (click)="bidCrypto()">
+          <!-- ui-sref="app.bidcrypto"> -->
+          <span class="crypto-icon light-blue-text text-darken-4 text-roboto">Ƀ&nbsp;</span><span class="font-20 text-roboto">{{currentUserBalance.ask}}</span><br><span class="light-blue-text text-darken-4">Bid</span>
+        </div>
+        <div class="col" (click)="askCrypto()" style="border-left: 1px solid #003967">
+          <!-- ui-sref="app.askcrypto" -->
+          <span class="crypto-icon light-blue-text text-darken-4 text-roboto">Ƀ&nbsp;</span><span class="font-20 light-blue-text text-darken-4 text-roboto">{{currentUserBalance.bid}}</span><br><span class="light-blue-text text-darken-4">Ask</span>
+        </div>
+      </div>
+    </div>
+    
+    <div id="container" class="light-blue darken-4 white-text" style="width:100%; height:400px;color:#fff !important"></div>
+   
+    <div class="row light-blue-text text-darken-4 white padding-balance no-margin" (click)="btcvault()">
+      <div class="col col-50">
+        <span>Available BTC</span><br>
+        <small style="color: #a9a9a9">Freezed&nbsp;</small>
+        <small style="color: #a9a9a9">Ƀ&nbsp;{{FreezedBTCbalance}}</small>
+        <!-- <h6 class="bold white-text">Freezed BTC balance : 0.012</h6> -->
+      </div>
+      <div class="col text-right ">
+        <span class="crypto-icon">Ƀ&nbsp;</span><span class="font-25">{{BTCbalance}}</span>
+      </div>
+    </div>
+    <hr class="no-margin">
+    <div class="row light-blue-text text-darken-4 white padding-balance no-margin" (click)="cryptovault()">
+      <div class="col col-50">
+        <span>Available BCC </span><br>
+        <small style="color: #a9a9a9">Freezed&nbsp;</small>
+        <small style="color: #a9a9a9">Ƀc&nbsp;{{FreezedBCHbalance}}</small>
+        <!-- <h6 class="bold white-text">Freezed BTC balance : 0.012</h6> -->
+      </div>
+      <div class="col text-right">
+        <span class="crypto-icon">Ƀc&nbsp;</span><span class="font-25 ">{{BCHbalance}}</span>
+      </div>
+    </div>
+    
+  </ion-content>
+
+<ion-footer color="custom">
+
+   <div class="bar bar-footer footer-height light-blue darken-3 center valign-wrapper">
+    <div class="row no-margin footer-button-line-height white-text">
+      <div class="col-xl-3" style="margin-left: 46px" (click)="BuyBch()">
+        <ion-icon name="send"></ion-icon>&nbsp;Buy</div>
+      <div class="col-xl-3" style="margin-left: 150px" (click)="SellBch()">
+       <ion-icon name="person"></ion-icon>
+        &nbsp;Sell</div>
+    </div>
+  </div>
+</ion-footer>
+     
+     
+

@@ -1,0 +1,69 @@
+<!--
+  Generated template for the BtcvaultPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="custom">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>BCC Wallet</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content >
+	   <div class="light-blue darken-4 white-text padding">
+      <div class="row">
+        <h4 class="col white-text no-margin text-roboto"><span class="crypto-icon crypto-vault-symbol">Ƀ&nbsp;</span>{{BCHbalance}}</h4>
+        <img src="http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl={{userBCHAddress}}" alt="QR Code" style="height: 10%; width: 10%;" (click)="showConfirm()">
+      </div>
+      <div class="row no-margin">
+        <div class="col col-66  white-text">
+          <small style="color: #a9a9a9">Freezed BCH Balance </small><br><span class="">Ƀ&nbsp;</span>{{FreezedBCHbalance}}
+        </div>
+      </div>
+    </div>
+
+    <div class="list" style="background: #ececec;">
+ <a class="item item-avatar valign-wrapper" (click)="bchsent()">
+              <img src="assets/icon/Bitcoin_cash_Logo.png">
+              <h2>Sent Transactions</h2>
+          </a>
+      <hr class="no-margin">
+      <a class="item item-avatar valign-wrapper" (click)="bchreceived()">
+              <img src="assets/icon/Bitcoin_cash_Logo.png">
+              <h2>Received Transactions</h2>
+      </a>
+      <hr class="no-margin">
+      <a class="item item-avatar valign-wrapper" (click)="buySellTransaction()">
+              <img src="assets/icon/Bitcoin_cash_Logo.png">
+              <h2>Buy/Sell Orders</h2>
+          </a>
+    </div>
+    <ion-fab  right bottom *ngIf="fabButton">
+    <button ion-fab mini (click)=footerShow()><ion-icon name="add"></ion-icon></button>
+   
+  </ion-fab>
+
+
+</ion-content>
+<ion-footer color="custom" *ngIf="footer">
+
+   <div class="bar bar-footer footer-height light-blue darken-3 center valign-wrapper">
+    <div class="row no-margin footer-button-line-height white-text">
+    	<div class="col-xl-3" style="margin-left: 24px" (click)="BuyBch()">
+        <ion-icon name="send"></ion-icon>&nbsp;Buy</div>
+        <div class="col-xl-3" style="margin-left: 24px" (click)="SellBch()">
+        <ion-icon name="person"></ion-icon>&nbsp;Sell</div>
+      <div class="col-xl-3" style="margin-left: 24px" (click)="sendBCH()">
+        <ion-icon name="send"></ion-icon>&nbsp;Send</div>
+      <div class="col-xl-3" style="margin-left: 24px" (click)="requestBCH()">
+       <ion-icon name="person"></ion-icon>
+        &nbsp;Request</div>
+
+    </div>
+  </div>
+</ion-footer>

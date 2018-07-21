@@ -1,0 +1,49 @@
+<!--
+  Generated template for the SendbtcPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="custom">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Send BTC</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content >
+<div class="light-blue darken-4 white-text padding">
+      <div class="row">
+        <h4 class="col white-text no-margin text-roboto"><span class="crypto-icon crypto-vault-symbol">Ƀ&nbsp;</span>{{BTCbalance}}</h4>
+        <img src="http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl={{userBTCAddress}}" alt="QR Code" style="height: 10%; width: 10%;" (click)="showConfirm()">
+      </div>
+      <div class="row no-margin">
+        <div class="col col-66  white-text">
+          <small style="color: #a9a9a9">Freezed BTC Balance </small><br><span class="">Ƀ&nbsp;</span>{{FreezedBTCbalance}}
+        </div>
+      </div>
+    </div>
+    <div class="row padding">
+      <form class="col s12 center">
+
+        <div class="row">
+          <div class="input-field col s12">
+          	 <input id="address" type="text" placeholder="Address" [(ngModel)]="values.recieverBTCCoinAddress" name="address">            
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+          	 <input id="amount" type="text" placeholder="Amount" [(ngModel)]="values.amount" name="amount">              
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light light-blue darken-4 white-text" type="submit" name="action" (click)="sendBTCCoinByUser(values)">Submit
+          <ion-icon name="send"></ion-icon>
+          </button>
+      </form>
+    </div>  
+
+   <ion-fab  right bottom *ngIf="fabButton">
+     <button ion-fab mini (click)=scanBarCode()><ion-icon name="camera"></ion-icon></button>   
+  </ion-fab>
+</ion-content>

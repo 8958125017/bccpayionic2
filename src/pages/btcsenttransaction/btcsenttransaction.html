@@ -1,0 +1,37 @@
+<!--
+  Generated template for the BtcsenttransactionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-navbar color="custom">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sent BTC</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content >
+      <div *ngFor="let item of transactionData" >
+        <div *ngIf="item.category == 'send'" class="card white-text orange lighten-1 margin padding">
+          <div class="row no-margin">
+            <span class="font-lighter">To:&nbsp;{{item.address}}</span><br>
+          </div>
+          <div class="row no-margin">
+            <div class="col-50 ">
+              <small class="valign-wrapper"><em>{{item.time* 1000 | date:'dd-MM-yy HH:mm'}}</em></small>
+              <a class="white-text" ng-click="transDetails(all.txid)">see details</a>
+            </div>
+            <div class="col-50 no-margin">
+              <div class="pull-right">
+                <span class="crypto-icon">Ƀ&nbsp;</span><span class="font-25">{{item.amount}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+     </div>  
+</ion-content>

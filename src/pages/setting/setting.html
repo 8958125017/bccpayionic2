@@ -1,0 +1,63 @@
+<!--
+  Generated template for the SettingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-header>
+  <ion-navbar color="custom">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+  <ion-content>
+    
+    <div class="list">
+      <a class="item item-divider indigo-text text-lighten-3">
+            Account
+          </a>
+      <a >
+        <div>
+          Account verify<br>{{email.userMailId}}
+          <span (click)="veryfyEmail(user)" class="pull-right red-text" *ngIf="verifyEmail==false"> Not Verified</span>
+          <span class="pull-right green-text" *ngIf="verifyEmail==true"> Verified</span>
+        </div>
+      </a>
+      
+      <a class="item item-divider indigo-text text-lighten-3" href="#">
+            Security
+          </a>
+      <a (click)="changeCurrentPassword()">
+            Change Password
+      </a><br><br>
+      <a  (click)="changeSpendingtPassword()">
+            Change Spending Password
+          </a>  
+  <ion-list>
+
+  <ion-item>
+    <ion-label>PIN lock</ion-label>
+    <ion-toggle [(ngModel)]="vaulePin" (ngModelChange)="setPinLock(vaulePin)"></ion-toggle>
+     
+  </ion-item>
+  <ion-item>
+  <ion-label>Finger print</ion-label>
+    <ion-toggle [(ngModel)]="vaulefinger" (ngModelChange)="setFingerPrint(vaulefinger)"></ion-toggle>
+    </ion-item>
+  </ion-list>   
+      <a class="item item-divider indigo-text text-lighten-3">
+            App
+       </a>
+       
+      <a class="item item-icon-right ink" > <!-- ui-sref="app.about"> -->            
+            AboutUs<br><span class="pull-left green-text" > Version 1.0.0 </span>
+      </a>
+    </div>
+  </ion-content>
+

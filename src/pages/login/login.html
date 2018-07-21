@@ -1,0 +1,34 @@
+
+<ion-content  class="light-blue darken-4 white-text" content>
+    <div class="logo center padding-top">
+      <h1 class="white-text font-lighter">BccPay</h1>
+    </div>
+    <div class="padding-top padding-left">
+      <h4 class="white-text font-lighter">Hello there, <br>welcome back</h4>
+    </div>
+    <form class="col s12 center">
+       <div class="row">
+        <div class="custom-input-focus-color input-field col s12">
+          <input id="email" type="text" value="" placeholder="Email" [(ngModel)]="logindetail.email" class="white-text" name="email">
+          <!-- <label for="address">Email</label> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="custom-input-focus-color input-field col s12">
+          <input id="password" type="password" placeholder="Password" value="" [(ngModel)]="logindetail.password" name="password" class="white-text">
+          <!-- <label for="amount">Password</label> -->
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light primarytext-color " type="submit" name="action" (click)="doLogin(logindetail)">Log me in
+      <ion-icon name="send"></ion-icon>
+      </button>
+      
+    </form>
+    <div class="row center">
+      <span class="col center white-text">Forgot Password? <a class="white-text"  (click)="forgotPassword()">Get New !</a></span><br>
+    </div>
+    <div class="row center">
+      <span class="col center white-text">Don't Have Account? <a class="white-text" (click)="signup()">Signup !
+      </a></span>
+    </div>
+  </ion-content>

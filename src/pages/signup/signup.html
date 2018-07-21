@@ -1,0 +1,48 @@
+
+<ion-content  class="light-blue darken-4 white-text" content>
+    <div class="logo center padding-top">
+      <h1 class="white-text font-lighter">BccPay</h1>
+    </div>
+    <div class="padding-top padding-left">
+      <h4 class="white-text font-lighter">Hello there, <br>welcome back</h4>
+    </div>
+    <form class="col s12 center">
+       <div class="row">
+        <div class="custom-input-focus-color input-field col s12">
+          <input id="email" type="text" value="" placeholder="Email" [(ngModel)]="signUpDetail.email" class="white-text" name="email">
+          <!-- <label for="address">Email</label> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="custom-input-focus-color input-field col s12">
+          <input id="password" type="password" placeholder="Password" value="" [(ngModel)]="signUpDetail.password" name="password" class="white-text">
+          <!-- <label for="amount">Password</label> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="custom-input-focus-color input-field col s12">
+          <input id="password" type="password" placeholder="confirmPassword" value="" [(ngModel)]="signUpDetail.confirmPassword" name="password" class="white-text">
+          <!-- <label for="amount">Password</label> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="custom-input-focus-color input-field col s12">
+          <input id="password" type="password" placeholder="spendingpassword" value="" [(ngModel)]="signUpDetail.spendingpassword" name="password" class="white-text">
+          <!-- <label for="amount">Password</label> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="custom-input-focus-color input-field col s12">
+          <input id="password" type="password" placeholder="confirmspendingpassword" value="" [(ngModel)]="signUpDetail.confirmspendingpassword" name="password" class="white-text">
+          <!-- <label for="amount">Password</label> -->
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light primarytext-color " type="submit"  (click)="createNewUser(signUpDetail)">Get Started
+         <ion-icon name="send"></ion-icon>
+      </button>
+      
+    </form>
+     <div class="row center">
+      <span class="col center white-text">Already Have Account? <a class="white-text" (click)="login()">Login !</a></span>
+    </div>
+  </ion-content>

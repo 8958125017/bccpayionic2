@@ -1,0 +1,70 @@
+<!--
+  Generated template for the BidcryptoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="custom">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Bid Bcc</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+
+<div class="light-blue darken-4 white-text padding">
+      <div class="row">
+        <h4 class="col s12 white-text text-roboto">{{BCHbalance}} Ƀc</h4>
+      </div>
+      <div class="row">
+        <span class="col s12 white-text text-roboto">{{BTCbalance}} Ƀ</span>
+        <span class="pull-right text-roboto">1 Ƀc={{currentUserBalance.ask}} Ƀ</span>
+      </div>
+    </div>
+    <form>
+      <div class="row no-margin ">
+        <div class="col-25 valign-wrapper">
+          <span class="valign-wrapper">Amount(BCC)</span>
+        </div>
+        <div class="col-75">
+          <div class="row no-margin trade">     
+            <input id="number" type="number" placeholder="0.00000" [(ngModel)]="bidCryptoAmount.bidAmountBCH" name="number" class="font-40 text-right no-border no-margin valign-wrapper">
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row no-margin">
+        <div class="col-25 valign-wrapper">
+          <span class="valign-wrapper">Bid Rate</span>
+        </div>
+        <div class="col-75">
+          <div class="row no-margin trade">
+          	<input id="number" type="number" placeholder="0.00000" [(ngModel)]="bidCryptoAmount.bidRate" (ngModelChange)="myFunc(bidCryptoAmount.bidAmountBCH *bidCryptoAmount.bidRate)" name="number" class="font-40 text-right no-border no-margin valign-wrapper" disabled="true">            
+          </div>
+
+        </div>
+      </div>
+      <hr>
+      <div class="row no-margin">
+        <div class="col-25 valign-wrapper">
+          <span class="valign-wrapper">Amount(BTC)</span>
+        </div>
+        <div class="col-75 ">
+          <div class="row no-margin trade">
+          	<input id="amount" type="number" placeholder="0.00000" value="{{bidCryptoAmount.bidAmountBTC }}" name="number" class="font-40 text-right no-border no-margin valign-wrapper">         
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="input-field col s12 center">
+          <button class="btn waves-effect waves-light light-blue darken-4 white-text" type="submit" name="action" (click)="bidAmountAction(bidCryptoAmount)">Confirm Bid
+                         <ion-icon name="send"></ion-icon>
+            </button>
+        </div>
+      </div>
+    </form>
+  </ion-content>
